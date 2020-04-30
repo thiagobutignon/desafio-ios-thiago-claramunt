@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83F10C7A245B0061007B4837 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F10C6C245B0061007B4837 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83F10C85245B0219007B4837 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C84245B0219007B4837 /* Model.swift */; };
+		83F10C87245B09A8007B4837 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C86245B09A8007B4837 /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		83F10C6A245B0061007B4837 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83F10C6C245B0061007B4837 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		83F10C6D245B0061007B4837 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83F10C84245B0219007B4837 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		83F10C86245B09A8007B4837 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +48,35 @@
 		83F10C6B245B0061007B4837 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				83F10C6C245B0061007B4837 /* Domain.h */,
 				83F10C6D245B0061007B4837 /* Info.plist */,
+				83F10C83245B0203007B4837 /* Errors */,
+				83F10C82245B01FF007B4837 /* Model */,
+				83F10C81245B01F8007B4837 /* UseCases */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		83F10C81245B01F8007B4837 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		83F10C82245B01FF007B4837 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83F10C84245B0219007B4837 /* Model.swift */,
+				83F10C86245B09A8007B4837 /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83F10C83245B0203007B4837 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,7 +86,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83F10C7A245B0061007B4837 /* Domain.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +122,7 @@
 				TargetAttributes = {
 					83F10C69245B0061007B4837 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -132,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83F10C85245B0219007B4837 /* Model.swift in Sources */,
+				83F10C87245B09A8007B4837 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +289,7 @@
 		83F10C7C245B0061007B4837 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -277,6 +307,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -284,6 +315,7 @@
 		83F10C7D245B0061007B4837 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
