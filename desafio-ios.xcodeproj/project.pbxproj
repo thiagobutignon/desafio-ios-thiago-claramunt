@@ -20,6 +20,8 @@
 		83F10C99245B10D4007B4837 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C98245B10D4007B4837 /* ItemType.swift */; };
 		83F10C9B245B1105007B4837 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C9A245B1105007B4837 /* ImageExtension.swift */; };
 		83F10C9D245B1121007B4837 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C9C245B1121007B4837 /* URLType.swift */; };
+		83F10C9F245B1180007B4837 /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10C9E245B1180007B4837 /* DomainError.swift */; };
+		83F10CA2245B11C5007B4837 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F10CA1245B11C5007B4837 /* GetCharacters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		83F10C98245B10D4007B4837 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		83F10C9A245B1105007B4837 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		83F10C9C245B1121007B4837 /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		83F10C9E245B1180007B4837 /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
+		83F10CA1245B11C5007B4837 /* GetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		83F10C81245B01F8007B4837 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				83F10CA1245B11C5007B4837 /* GetCharacters.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		83F10C83245B0203007B4837 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				83F10C9E245B1180007B4837 /* DomainError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				83F10C8B245B0F9E007B4837 /* Character.swift in Sources */,
 				83F10C91245B1082007B4837 /* ComicList.swift in Sources */,
 				83F10C97245B10C0007B4837 /* StorySummary.swift in Sources */,
+				83F10CA2245B11C5007B4837 /* GetCharacters.swift in Sources */,
+				83F10C9F245B1180007B4837 /* DomainError.swift in Sources */,
 				83F10C8D245B0FDD007B4837 /* Url.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

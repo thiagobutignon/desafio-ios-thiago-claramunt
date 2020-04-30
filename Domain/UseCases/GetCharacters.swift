@@ -1,5 +1,5 @@
 //
-//  Characters.swift
+//  GetCharacters.swift
 //  Domain
 //
 //  Created by Thiago B Claramunt on 30/04/20.
@@ -8,12 +8,13 @@
 
 import Foundation
 
-public struct CharactersDataWrapper: Model {
+public protocol GetCharacters {
+    func get(getCharactersModel: GetCharactersModel, completion: @escaping (Result<CharactersDataWrapper, DomainError>) -> Void)
+}
+
+public struct GetCharactersModel: Model {
     let code: Int
     let status, copyright, attributionText, attributionHTML: String
     let etag: String
     let data: CharacterDataContainer
 }
-
-
-
