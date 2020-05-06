@@ -7,11 +7,20 @@
 //
 
 import XCTest
+import Alamofire
+
+class AlamofireAdapter {
+    func get(to url: URL) {
+        
+    }
+}
 
 class AlamofireAdapterTests: XCTestCase {
     func test_() {
-     
+        let url = makeUrl()
+        let sut = AlamofireAdapter()
+        sut.get(to: url)
     }
-
-
+    
+    
 }
