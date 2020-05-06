@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Url: Model {
+public struct Url: Model {
     let type: String
     let url: String
+    
+    public init(type: String, url: String) {
+        self.type = type
+        self.url = url
+    }
 }

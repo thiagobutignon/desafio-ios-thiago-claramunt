@@ -8,12 +8,17 @@
 
 import Foundation
 
-struct Image: Model {
+public struct Image: Model {
     let path: String
     let thumbnailExtension: ImageExtension
 
     enum CodingKeys: String, CodingKey {
         case path
         case thumbnailExtension = "extension"
+    }
+    
+    public init(path: String, thumbnailExtension: ImageExtension) {
+        self.path = path
+        self.thumbnailExtension = thumbnailExtension
     }
 }

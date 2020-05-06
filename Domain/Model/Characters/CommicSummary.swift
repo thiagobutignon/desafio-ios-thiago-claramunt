@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct ComicSummary: Model {
+public struct ComicSummary: Model {
     let resourceURI: String
     let name: String
+    
+    public init(resourceURI: String, name: String) {
+        self.resourceURI = resourceURI
+        self.name = name
+    }
 }

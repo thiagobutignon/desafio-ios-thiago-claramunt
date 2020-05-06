@@ -1,5 +1,5 @@
 //
-//  ItemType.swift
+//  ImageExtension.swift
 //  Domain
 //
 //  Created by Thiago B Claramunt on 30/04/20.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-enum ItemType: String, Model {
-    case cover = "cover"
-    case empty = ""
-    case interiorStory = "interiorStory"
+public enum ImageExtension: String, Model {
+    case gif = "gif"
+    case jpg = "jpg"
 }

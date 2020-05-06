@@ -8,8 +8,14 @@
 
 import Foundation
 
-struct StorySummary: Model {
+public struct StorySummary: Model {
     let resourceURI: String
     let name: String
     let type: ItemType
+    
+    public init(resourceURI: String, name: String, type: ItemType) {
+        self.resourceURI = resourceURI
+        self.name = name
+        self.type = type
+    }
 }
