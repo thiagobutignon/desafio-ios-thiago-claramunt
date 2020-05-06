@@ -9,10 +9,10 @@
 import Foundation
 
 public struct CharactersDataWrapper: Model {
-    let code: Int
-    let status, copyright, attributionText, attributionHTML: String
-    let etag: String
-    let data: CharacterDataContainer
+    public let code: Int
+    public let status, copyright, attributionText, attributionHTML: String
+    public let etag: String
+    public let data: CharacterDataContainer
     
     public init(code: Int, status: String, copyright: String, attributionText: String, attributionHTML: String, etag: String, data: CharacterDataContainer) {
         self.code = code

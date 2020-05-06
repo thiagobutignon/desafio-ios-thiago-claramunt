@@ -9,8 +9,8 @@
 import Foundation
 
 public struct CharacterDataContainer: Model {
-    let offset, limit, total, count: Int
-    let results: [Character]
+    public let offset, limit, total, count: Int
+    public let results: [Character]
     
     public init(offset: Int, limit: Int, total: Int, count: Int, results: [Character]) {
         self.offset = offset

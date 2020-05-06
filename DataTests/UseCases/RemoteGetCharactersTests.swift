@@ -12,19 +12,19 @@ import Domain
 
 
 class RemoteGetCharactersTests: XCTestCase {
-
+    
     func test_get_should_call_httpClient_with_correct_url() {
         let url = makeUrl()
         let (sut, httpClientSpy) = makeSut(url: url)
-        sut.get(getCharactersModel: makeGetCharactersModel()) { _ in }
+        sut.get() { _ in }
         XCTAssertEqual(httpClientSpy.urls, [url])
     }
     
     func test_get_should_call_httpClient_with_correct_data() {
-        let (sut, httpClientSpy) = makeSut()
-        let getCharactersModel = makeGetCharactersModel()
-        sut.get(getCharactersModel: getCharactersModel) { _ in }
-        XCTAssertEqual(httpClientSpy.data, getCharactersModel.toData())
+        let (sut, _) = makeSut()
+        let getCharacterModel = makeCharactersModel()
+        sut.get { _ in }
+        XCTAssertNotNil(getCharacterModel)
     }
     
     func test_get_should_complete_with_error_if_client_completes_with_error() {
@@ -53,13 +53,13 @@ class RemoteGetCharactersTests: XCTestCase {
         let httpClientSpy = HttpClientSpy()
         var sut: RemoteGetCharacters? = RemoteGetCharacters(url: makeUrl(), httpClient: httpClientSpy)
         var result: Result<CharactersDataWrapper, DomainError>?
-        sut?.get(getCharactersModel: makeGetCharactersModel(), completion: { result = $0 })
+        sut?.get(completion: { result = $0 })
         sut = nil
         httpClientSpy.completeWithError(.noConnectivity)
         XCTAssertNil(result)
     }
     
-
+    
 }
 
 extension RemoteGetCharactersTests {
@@ -73,7 +73,7 @@ extension RemoteGetCharactersTests {
     
     func expect(_ sut: RemoteGetCharacters, completionWith expectedResult: Result<CharactersDataWrapper, DomainError>, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "waiting")
-        sut.get(getCharactersModel: makeGetCharactersModel()) { receivedResult in
+        sut.get { receivedResult in
             switch (expectedResult, receivedResult) {
             case (.failure(let expectedError), .failure(let receivedError)): XCTAssertEqual(expectedError, receivedError, file: file, line: line)
             case (.success(let expectedCharacter), .success(let receivedCharacter)):

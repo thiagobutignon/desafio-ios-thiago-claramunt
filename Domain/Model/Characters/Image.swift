@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Image: Model {
-    let path: String
-    let thumbnailExtension: ImageExtension
+    public let path: String
+    public let thumbnailExtension: ImageExtension
 
     enum CodingKeys: String, CodingKey {
         case path

@@ -9,9 +9,9 @@
 import Foundation
 
 public struct StorySummary: Model {
-    let resourceURI: String
-    let name: String
-    let type: ItemType
+    public let resourceURI: String
+    public let name: String
+    public let type: ItemType
     
     public init(resourceURI: String, name: String, type: ItemType) {
         self.resourceURI = resourceURI

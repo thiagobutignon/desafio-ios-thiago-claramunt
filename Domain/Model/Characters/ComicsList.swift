@@ -9,10 +9,10 @@
 import Foundation
 
 public struct ComicsList: Model {
-    let available: Int
-    let collectionURI: String
-    let items: [ComicSummary]
-    let returned: Int
+    public let available: Int
+    public let collectionURI: String
+    public let items: [ComicSummary]
+    public let returned: Int
     
     public init(available: Int, collectionURI: String, items: [ComicSummary], returned: Int) {
         self.available = available

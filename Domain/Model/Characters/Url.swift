@@ -9,8 +9,8 @@
 import Foundation
 
 public struct Url: Model {
-    let type: String
-    let url: String
+    public let type: String
+    public let url: String
     
     public init(type: String, url: String) {
         self.type = type

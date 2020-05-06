@@ -9,15 +9,15 @@
 import Foundation
 
 public struct Character: Model {
-    let id: Int
-    let name, resultDescription: String
-    let modified: String
-    let thumbnail: Image
-    let resourceURI: String
-    let comics, series: ComicsList
-    let stories: StoryList
-    let events: ComicsList
-    let urls: [Url]
+    public let id: Int
+    public let name, resultDescription: String
+    public let modified: String
+    public let thumbnail: Image
+    public let resourceURI: String
+    public let comics, series: ComicsList
+    public let stories: StoryList
+    public let events: ComicsList
+    public let urls: [Url]
 
     enum CodingKeys: String, CodingKey {
         case id, name

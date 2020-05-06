@@ -18,8 +18,8 @@ public final class RemoteGetCharacters: GetCharacters {
         self.httpClient = httpClient
     }
     
-    public func get(getCharactersModel: GetCharactersModel, completion: @escaping (Result<CharactersDataWrapper, DomainError>) -> Void) {
-        httpClient.get(to: url, with: getCharactersModel.toData()) { [weak self] result in
+    public func get(completion: @escaping (Result<CharactersDataWrapper, DomainError>) -> Void) {
+        httpClient.get(to: url) { [weak self] result in
             guard self != nil else { return }
             
             switch result {
