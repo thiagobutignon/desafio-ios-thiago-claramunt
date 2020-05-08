@@ -11,6 +11,8 @@ import UIKit
 import Presentation
 
 public final class ListCharactersViewController: UIViewController, Storyboarded {
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,10 @@ extension ListCharactersViewController: LoadingView {
     public func display(viewModel: LoadingViewModel) {
         if viewModel.isLoading {
             view.isUserInteractionEnabled = false
+            loadingIndicator?.startAnimating()
         } else {
             view.isUserInteractionEnabled = true
+            loadingIndicator?.stopAnimating()
         }
     }
 }

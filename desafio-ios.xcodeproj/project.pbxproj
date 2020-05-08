@@ -30,6 +30,8 @@
 		83E2647F2465A5C300B9E784 /* ListCharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2647E2465A5C300B9E784 /* ListCharactersViewController.swift */; };
 		83E264832465A5E800B9E784 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E264822465A5E800B9E784 /* UIViewControllerExtensions.swift */; };
 		83E264852465A5FA00B9E784 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E264842465A5FA00B9E784 /* Storyboarded.swift */; };
+		83E264882465A7E400B9E784 /* ListCharacter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E264872465A7E400B9E784 /* ListCharacter.storyboard */; };
+		83E2648B2465AC7800B9E784 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2648A2465AC7800B9E784 /* CharacterCell.swift */; };
 		83ECB5302462DBD800B35736 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECB52F2462DBD800B35736 /* TestFactories.swift */; };
 		83ECB53F2462E28900B35736 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ECB5362462E28900B35736 /* Infra.framework */; };
 		83ECB5442462E28900B35736 /* AlamofireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECB5432462E28900B35736 /* AlamofireAdapterTests.swift */; };
@@ -190,6 +192,8 @@
 		83E2647E2465A5C300B9E784 /* ListCharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCharactersViewController.swift; sourceTree = "<group>"; };
 		83E264822465A5E800B9E784 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		83E264842465A5FA00B9E784 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		83E264872465A7E400B9E784 /* ListCharacter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListCharacter.storyboard; sourceTree = "<group>"; };
+		83E2648A2465AC7800B9E784 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		83ECB52F2462DBD800B35736 /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
 		83ECB5362462E28900B35736 /* Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83ECB5392462E28900B35736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -475,6 +479,7 @@
 		83E2647C2465A55900B9E784 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				83E264892465AC6300B9E784 /* Components */,
 				83E2647D2465A5AA00B9E784 /* ListCharacters */,
 			);
 			path = Scenes;
@@ -484,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				83E2647E2465A5C300B9E784 /* ListCharactersViewController.swift */,
+				83E264872465A7E400B9E784 /* ListCharacter.storyboard */,
 			);
 			path = ListCharacters;
 			sourceTree = "<group>";
@@ -495,6 +501,14 @@
 				83E264842465A5FA00B9E784 /* Storyboarded.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		83E264892465AC6300B9E784 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				83E2648A2465AC7800B9E784 /* CharacterCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		83ECB5372462E28900B35736 /* Infra */ = {
@@ -987,6 +1001,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E264882465A7E400B9E784 /* ListCharacter.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,6 +1078,7 @@
 				83E264832465A5E800B9E784 /* UIViewControllerExtensions.swift in Sources */,
 				83E264852465A5FA00B9E784 /* Storyboarded.swift in Sources */,
 				83E2647F2465A5C300B9E784 /* ListCharactersViewController.swift in Sources */,
+				83E2648B2465AC7800B9E784 /* CharacterCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
