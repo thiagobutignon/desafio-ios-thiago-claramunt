@@ -52,6 +52,20 @@
             BlueprintName = "Infra"
             ReferencedContainer = "container:desafio-ios.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "83ECB5762463532500B35736"
+            BuildableName = "Presentation.framework"
+            BlueprintName = "Presentation"
+            ReferencedContainer = "container:desafio-ios.xcodeproj">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "83E263C82464609800B9E784"
+            BuildableName = "UI.framework"
+            BlueprintName = "UI"
+            ReferencedContainer = "container:desafio-ios.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -81,6 +95,26 @@
                BlueprintIdentifier = "83ECB55F24633CBD00B35736"
                BuildableName = "UseCasesIntegrationTests.xctest"
                BlueprintName = "UseCasesIntegrationTests"
+               ReferencedContainer = "container:desafio-ios.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83ECB57E2463532500B35736"
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
+               ReferencedContainer = "container:desafio-ios.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "83E263D02464609800B9E784"
+               BuildableName = "UITests.xctest"
+               BlueprintName = "UITests"
                ReferencedContainer = "container:desafio-ios.xcodeproj">
             </BuildableReference>
          </TestableReference>
