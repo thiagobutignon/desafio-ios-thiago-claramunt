@@ -26,6 +26,7 @@ class GetCharactersIntegrationTests: XCTestCase {
                 XCTAssertNotNil(character)
                 XCTAssertEqual(200, character.code)
                 XCTAssertEqual("Ok", character.status)
+                print(character)
             }
             exp.fulfill()
         }

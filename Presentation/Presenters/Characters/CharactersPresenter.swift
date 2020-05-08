@@ -10,16 +10,17 @@ import Foundation
 import Domain
 
 public final class CharactersPresenter {
-    private var characters: CharactersDataWrapper?
+    private var charactersView: DisplayCharactersView
     private let alertView: AlertView
     private let loadingView: LoadingView
     private let getCharacters: GetCharacters
 
     
-    public init(alertView: AlertView, loadingView: LoadingView, getCharacters: GetCharacters ) {
+    public init(alertView: AlertView, loadingView: LoadingView, getCharacters: GetCharacters, charactersView: DisplayCharactersView ) {
         self.alertView = alertView
         self.loadingView = loadingView
         self.getCharacters = getCharacters
+        self.charactersView = charactersView
     }
     
     public func getCharacter(viewModel: CharactersViewModel) {
@@ -31,17 +32,10 @@ public final class CharactersPresenter {
                 self.alertView.showMessage(viewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu"))
             case .success(let character):
                 self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Lista de Personagens carregadas com sucesso"))
-                self.characters = character
+                self.charactersView.showCharacters(viewModel: DisplayCharactersViewModel(data: character))
+                
             }
             self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
         }
-    }
-    
-    public func countCharacter() -> Int {
-        return (characters?.data.results.count)!
-    }
-    
-    public func getCharacterOnly(at index: Int) -> Character {
-        return (self.characters?.data.results[index])!
     }
 }
