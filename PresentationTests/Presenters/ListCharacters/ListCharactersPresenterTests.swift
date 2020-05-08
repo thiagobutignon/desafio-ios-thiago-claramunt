@@ -22,7 +22,7 @@ class ListCharactersPresenterTests: XCTestCase {
               XCTAssertEqual(viewModel, makeErrorAlertViewModel(message: "Algo inesperado aconteceu"))
               exp.fulfill()
           }
-          sut.getCharacter()
+        sut.getCharacter(viewModel: makeCharacterViewModel())
         getCharacterSpy.completeWithErro(.unexpected)
           wait(for: [exp], timeout: 1)
       }
@@ -36,7 +36,7 @@ class ListCharactersPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel, makeSuccessAlertViewModel(message: "Lista de Personagens carregadas com sucesso"))
             exp.fulfill()
         }
-        sut.getCharacter()
+        sut.getCharacter(viewModel: makeCharacterViewModel())
         getCharacterSpy.completeWithCharacter(makeCharacterDataWrapper())
         wait(for: [exp], timeout: 1)
     }
@@ -51,7 +51,7 @@ class ListCharactersPresenterTests: XCTestCase {
             exp.fulfill()
         }
         
-        sut.getCharacter()
+        sut.getCharacter(viewModel: makeCharacterViewModel())
         wait(for: [exp], timeout: 1)
         
         let exp2 = expectation(description: "waiting")
@@ -69,7 +69,7 @@ class ListCharactersPresenterTests: XCTestCase {
 
 extension ListCharactersPresenterTests {
     func makeSut(alertView: AlertViewSpy = AlertViewSpy(), responseValidator: ResponseValidatorSpy = ResponseValidatorSpy(), getCharacters: GetCharactersSpy = GetCharactersSpy(), loadingView: LoadingViewSpy = LoadingViewSpy(), file: StaticString = #file, line: UInt = #line) -> CharactersPresenter {
-        let sut = CharactersPresenter(alertView: alertView, loadingView: loadingView, getCharacters: getCharacters, responseValidator: responseValidator)
+        let sut = CharactersPresenter(alertView: alertView, loadingView: loadingView, getCharacters: getCharacters)
         checkMemoryLeak(for: sut)
         return sut
     }

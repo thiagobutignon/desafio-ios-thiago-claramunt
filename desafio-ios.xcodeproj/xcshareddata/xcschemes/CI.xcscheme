@@ -66,6 +66,13 @@
             BlueprintName = "UI"
             ReferencedContainer = "container:desafio-ios.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "83E264D72465DAB000B9E784"
+            BuildableName = "Main.app"
+            BlueprintName = "Main"
+            ReferencedContainer = "container:desafio-ios.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference

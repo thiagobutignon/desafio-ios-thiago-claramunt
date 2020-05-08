@@ -9,12 +9,7 @@
 import Foundation
 import Domain
 
-public protocol CharacterDataProviderDelegate: class {
-    func success(character: CharactersDataWrapper)
-}
-
 public final class CharactersPresenter {
-    public weak var delegate: CharacterDataProviderDelegate?
     private var characters: CharactersDataWrapper?
     private let alertView: AlertView
     private let loadingView: LoadingView
@@ -25,8 +20,6 @@ public final class CharactersPresenter {
         self.alertView = alertView
         self.loadingView = loadingView
         self.getCharacters = getCharacters
-
-        
     }
     
     public func getCharacter(viewModel: CharactersViewModel) {
@@ -39,8 +32,6 @@ public final class CharactersPresenter {
             case .success(let character):
                 self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Lista de Personagens carregadas com sucesso"))
                 self.characters = character
-                self.delegate?.success(character: self.characters!)
-                
             }
             self.loadingView.display(viewModel: LoadingViewModel(isLoading: false))
         }

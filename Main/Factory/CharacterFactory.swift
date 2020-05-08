@@ -19,6 +19,7 @@ class CharacterFactory {
         let alamofireAdapter = AlamofireAdapter()
         let remoteGetCharacter = RemoteGetCharacters(url: url, httpClient: alamofireAdapter)
         let presenter = CharactersPresenter(alertView: controller, loadingView: controller, getCharacters: remoteGetCharacter)
+        
         controller.getCharacter = presenter.getCharacter
         return controller
     }

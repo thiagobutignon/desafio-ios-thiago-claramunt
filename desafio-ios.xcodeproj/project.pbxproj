@@ -613,8 +613,8 @@
 		83E2647D2465A5AA00B9E784 /* ListCharacters */ = {
 			isa = PBXGroup;
 			children = (
-				83E2647E2465A5C300B9E784 /* ListCharactersViewController.swift */,
 				83E264872465A7E400B9E784 /* ListCharacters.storyboard */,
+				83E2647E2465A5C300B9E784 /* ListCharactersViewController.swift */,
 			);
 			path = ListCharacters;
 			sourceTree = "<group>";

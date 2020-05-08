@@ -16,14 +16,17 @@ public final class ListCharactersViewController: UIViewController, Storyboarded 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
-    public var dataProvider: CharactersPresenter?
     public var getCharacter: ((CharactersViewModel) -> Void)?
+    public var presenter: CharactersPresenter?
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     
     private func configure() {
+        self.presenter?.getCharacter(viewModel: CharactersViewModel(character: nil))
+        let count = self.presenter?.countCharacter()
+        print(count)
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
@@ -31,12 +34,12 @@ public final class ListCharactersViewController: UIViewController, Storyboarded 
 
 extension ListCharactersViewController: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let numberOfCharacters: Int = self.dataProvider?.countCharacter() else { return 0}
+        guard let numberOfCharacters: Int = self.presenter?.countCharacter() else { return 0}
         return numberOfCharacters
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let character = self.dataProvider?.getCharacterOnly(at: indexPath.row) else { return UITableViewCell()}
+        guard let character =  self.presenter?.getCharacterOnly(at: indexPath.row) else { return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterCell {
             cell.characterNameLabel.text = character.name
             let imageUrl = character.thumbnail.path + "." + character.thumbnail.thumbnailExtension.rawValue
