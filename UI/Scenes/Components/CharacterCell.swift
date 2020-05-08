@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class CharacterCell: UITableViewCell {
     @IBOutlet weak var characterImage: UIImageView!

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Presentation
 
+
 public final class ListCharactersViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -38,6 +39,10 @@ extension ListCharactersViewController: UITableViewDataSource, UITableViewDelega
         guard let character = self.dataProvider?.getCharacterOnly(at: indexPath.row) else { return UITableViewCell()}
         if let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterCell {
             cell.characterNameLabel.text = character.name
+            let imageUrl = character.thumbnail.path + "." + character.thumbnail.thumbnailExtension.rawValue
+            
+            
+            cell.characterImage.sd_setImage(with: URL(string: imageUrl))
             return cell
         }
         return UITableViewCell()

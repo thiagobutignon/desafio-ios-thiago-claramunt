@@ -32,6 +32,10 @@
 		83E264852465A5FA00B9E784 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E264842465A5FA00B9E784 /* Storyboarded.swift */; };
 		83E264882465A7E400B9E784 /* ListCharacter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83E264872465A7E400B9E784 /* ListCharacter.storyboard */; };
 		83E2648B2465AC7800B9E784 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2648A2465AC7800B9E784 /* CharacterCell.swift */; };
+		83E264B42465D2AA00B9E784 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 83E264B32465D2AA00B9E784 /* SDWebImage */; };
+		83E264B62465D2DE00B9E784 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 83E264B52465D2DE00B9E784 /* SDWebImage */; };
+		83E264CF2465D8E200B9E784 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ECB5772463532500B35736 /* Presentation.framework */; };
+		83E264D02465D8E200B9E784 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83ECB5772463532500B35736 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83ECB5302462DBD800B35736 /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECB52F2462DBD800B35736 /* TestFactories.swift */; };
 		83ECB53F2462E28900B35736 /* Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83ECB5362462E28900B35736 /* Infra.framework */; };
 		83ECB5442462E28900B35736 /* AlamofireAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECB5432462E28900B35736 /* AlamofireAdapterTests.swift */; };
@@ -84,6 +88,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 83F10C69245B0061007B4837;
 			remoteInfo = Domain;
+		};
+		83E264D12465D8E200B9E784 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83F10C42245B0015007B4837 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83ECB5762463532500B35736;
+			remoteInfo = Presentation;
 		};
 		83ECB5402462E28900B35736 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -151,6 +162,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				83E263F62464660600B9E784 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83E264D32465D8E300B9E784 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				83E264D02465D8E200B9E784 /* Presentation.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +264,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E264CF2465D8E200B9E784 /* Presentation.framework in Frameworks */,
+				83E264B62465D2DE00B9E784 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +322,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E264B42465D2AA00B9E784 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,12 +762,17 @@
 				83E263C52464609800B9E784 /* Sources */,
 				83E263C62464609800B9E784 /* Frameworks */,
 				83E263C72464609800B9E784 /* Resources */,
+				83E264D32465D8E300B9E784 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				83E264D22465D8E200B9E784 /* PBXTargetDependency */,
 			);
 			name = UI;
+			packageProductDependencies = (
+				83E264B52465D2DE00B9E784 /* SDWebImage */,
+			);
 			productName = UI;
 			productReference = 83E263C92464609800B9E784 /* UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -878,6 +908,9 @@
 			dependencies = (
 			);
 			name = Domain;
+			packageProductDependencies = (
+				83E264B32465D2AA00B9E784 /* SDWebImage */,
+			);
 			productName = Domain;
 			productReference = 83F10C6A245B0061007B4837 /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
@@ -977,6 +1010,7 @@
 			mainGroup = 83F10C41245B0015007B4837;
 			packageReferences = (
 				83ECB5542462E54100B35736 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				83E264B22465D2AA00B9E784 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 83F10C4C245B0015007B4837 /* Products */;
 			projectDirPath = "";
@@ -1203,6 +1237,11 @@
 			target = 83F10C69245B0061007B4837 /* Domain */;
 			targetProxy = 83E263F72464660600B9E784 /* PBXContainerItemProxy */;
 		};
+		83E264D22465D8E200B9E784 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83ECB5762463532500B35736 /* Presentation */;
+			targetProxy = 83E264D12465D8E200B9E784 /* PBXContainerItemProxy */;
+		};
 		83ECB5412462E28900B35736 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 83ECB5352462E28900B35736 /* Infra */;
@@ -1266,8 +1305,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1293,8 +1333,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1314,7 +1355,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1334,7 +1376,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -1359,6 +1402,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1386,6 +1430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Infra;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
@@ -1407,6 +1452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.InfraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1427,6 +1473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.InfraTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1446,6 +1493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UseCasesIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1465,6 +1513,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.UseCasesIntegrationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1490,6 +1539,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Presentation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1517,6 +1567,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Presentation;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
@@ -1538,6 +1589,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.PresentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1558,6 +1610,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.PresentationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1702,6 +1755,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1729,6 +1783,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Domain;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
@@ -1755,6 +1810,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1782,6 +1838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.Data;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
@@ -1803,6 +1860,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1823,6 +1881,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.betaquark.DataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1933,6 +1992,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		83E264B22465D2AA00B9E784 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.4;
+			};
+		};
 		83ECB5542462E54100B35736 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1944,6 +2011,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		83E264B32465D2AA00B9E784 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83E264B22465D2AA00B9E784 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		83E264B52465D2DE00B9E784 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 83E264B22465D2AA00B9E784 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		83ECB5552462E54100B35736 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 83ECB5542462E54100B35736 /* XCRemoteSwiftPackageReference "Alamofire" */;
