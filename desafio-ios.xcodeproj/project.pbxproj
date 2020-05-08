@@ -421,19 +421,19 @@
 		83E263ED2464629800B9E784 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				83E263EE246462A200B9E784 /* ListCharacters */,
+				83E263EE246462A200B9E784 /* Characters */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
 		};
-		83E263EE246462A200B9E784 /* ListCharacters */ = {
+		83E263EE246462A200B9E784 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
 				83E263EF246462C100B9E784 /* CharactersPresenter.swift */,
 				83E263F3246463FC00B9E784 /* CharactersMapper.swift */,
 				83E263F12464635300B9E784 /* CharactersViewModel.swift */,
 			);
-			path = ListCharacters;
+			path = Characters;
 			sourceTree = "<group>";
 		};
 		83E263FA24646A2400B9E784 /* Validators */ = {

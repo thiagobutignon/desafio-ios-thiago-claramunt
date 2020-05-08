@@ -11,8 +11,11 @@ import UIKit
 import Presentation
 
 public final class ListCharactersViewController: UIViewController, Storyboarded {
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    public var dataProvider: CharactersPresenter?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,27 @@ public final class ListCharactersViewController: UIViewController, Storyboarded 
     }
     
     private func configure() {
-        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
+}
+
+extension ListCharactersViewController: UITableViewDataSource, UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let numberOfCharacters: Int = self.dataProvider?.countCharacter() else { return 0}
+        return numberOfCharacters
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let character = self.dataProvider?.getCharacterOnly(at: indexPath.row) else { return UITableViewCell()}
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterCell {
+            cell.characterNameLabel.text = character.name
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
 }
 
 extension ListCharactersViewController: LoadingView {

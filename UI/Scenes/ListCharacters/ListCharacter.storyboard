@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="VDh-Gy-TNG" id="DBp-AH-AYe"/>
+                        <outlet property="tableView" destination="250-gy-ktg" id="DCA-xn-Wlg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOY-Io-5nz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
