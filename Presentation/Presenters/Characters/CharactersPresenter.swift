@@ -19,17 +19,17 @@ public final class CharactersPresenter {
     private let alertView: AlertView
     private let loadingView: LoadingView
     private let getCharacters: GetCharacters
-    private let responseValidator: ResponseValidator
+
     
-    public init(alertView: AlertView, loadingView: LoadingView, getCharacters: GetCharacters, responseValidator: ResponseValidator) {
+    public init(alertView: AlertView, loadingView: LoadingView, getCharacters: GetCharacters ) {
         self.alertView = alertView
         self.loadingView = loadingView
         self.getCharacters = getCharacters
-        self.responseValidator = responseValidator
+
         
     }
     
-    public func getCharacter() {
+    public func getCharacter(viewModel: CharactersViewModel) {
         loadingView.display(viewModel: LoadingViewModel(isLoading: true))
         getCharacters.get { [weak self] result in
             guard let self = self else { return }

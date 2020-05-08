@@ -17,7 +17,7 @@ public final class ListCharactersViewController: UIViewController, Storyboarded 
     @IBOutlet weak var tableView: UITableView!
     
     public var dataProvider: CharactersPresenter?
-    
+    public var getCharacter: ((CharactersViewModel) -> Void)?
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
