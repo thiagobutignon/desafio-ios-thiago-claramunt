@@ -17,15 +17,12 @@ public final class ListCharactersViewController: UIViewController, Storyboarded 
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     public var getCharacter: ((CharactersViewModel) -> Void)?
-    public var presenter: CharactersPresenter?
     public override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
     
     private func configure() {
-        self.presenter?.getCharacter(viewModel: CharactersViewModel(character: nil))
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
